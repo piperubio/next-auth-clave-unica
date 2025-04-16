@@ -48,7 +48,7 @@ Cuando uses el servidor mock, actualiza las variables de entorno para que apunte
 CLAVE_UNICA_URL=http://localhost:8080
 CLAVE_UNICA_CLIENT_ID=mock-client-id
 CLAVE_UNICA_CLIENT_SECRET=mock-client-secret
-NEXT_PUBLIC_CLAVE_UNICA_LOGOUT_URL=http://localhost:8080/logout
+NEXT_PUBLIC_CLAVE_UNICA_LOGOUT_URL=https://accounts.claveunica.gob.cl/api/v1/accounts/app/logout?redirect=http://localhost:3000
 ```
 
 Estas variables aseguran que la integración funcione correctamente con el servidor mock durante el desarrollo o pruebas.
