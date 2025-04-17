@@ -10,6 +10,12 @@ Este proyecto está basado en [Next.js](https://nextjs.org) y fue creado con [`c
 
 ### Iniciar el Servidor de Desarrollo
 
+Para instalar las dependencias, ejecuta:
+
+```bash
+pnpm install
+```
+
 Para iniciar el servidor de desarrollo, ejecuta:
 
 ```bash
