@@ -339,6 +339,28 @@ callbacks: {
 
 ## Proceso Completo de Autenticación
 
+```mermaid
+sequenceDiagram
+    participant Usuario
+    participant Aplicación
+    participant ClaveÚnica
+
+    Usuario->>Aplicación: Selecciona "Iniciar sesión con Clave Única"
+    Aplicación->>ClaveÚnica: Redirige al portal de autenticación
+    ClaveÚnica->>Usuario: Solicita credenciales
+    Usuario->>ClaveÚnica: Ingresa credenciales
+    ClaveÚnica->>Aplicación: Redirige con código de autorización
+    Aplicación->>ClaveÚnica: Intercambia código por tokens
+    ClaveÚnica->>Aplicación: Retorna tokens (access_token, etc.)
+    Aplicación->>ClaveÚnica: Solicita perfil del usuario
+    ClaveÚnica->>Aplicación: Retorna perfil del usuario
+    Aplicación->>Aplicación: Procesa perfil con callback `profile`
+    Aplicación->>Aplicación: Actualiza token con callback `jwt`
+    Aplicación->>Aplicación: Configura sesión con callback `session`
+    Aplicación->>Usuario: Acceso a secciones protegidas
+```
+
+
 1. **Inicio de Sesión**: El usuario selecciona iniciar sesión con Clave Única.
 2. **Redirección**: Es redirigido al portal de Clave Única.
 3. **Autenticación**: El usuario ingresa sus credenciales y se autentica.
