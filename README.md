@@ -418,6 +418,14 @@ export const authConfig = {
 - **Pruebas Exhaustivas**: Realiza pruebas completas del flujo de autenticación para garantizar que todo funcione correctamente.
 - **Depuración**: Utiliza el modo de depuración (`debug: true`) en entornos de desarrollo para facilitar la identificación de problemas.
 
+## Despliegue docker
+
+Para desplegar la aplicación en un contenedor Docker, asegúrate de compilar la aplicación
+
+```bash
+docker build -t next-auth-clave-unica:latest --build-arg NEXT_PUBLIC_CLAVE_UNICA_LOGOUT_URL="https://accounts.claveunica.gob.cl/api/v1/accounts/app/logout\?redirect\=http://localhost:3000" --platform linux/amd64  .
+```
+
 ## Recursos Adicionales
 
 - **Documentación Oficial de NextAuth.js**: [https://next-auth.js.org/](https://next-auth.js.org/)
