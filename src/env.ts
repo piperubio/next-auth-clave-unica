@@ -22,7 +22,7 @@ export const env = createEnv({
       // transform to boolean using preferred coercion logic
       .transform((s) => s !== "false" && s !== "0")
       .default("false"),
-    REDIRECT_URL: z.string().url(),
+    REDIRECT_URL: z.string().url().default("https://google.con"),
   },
 
   /**
